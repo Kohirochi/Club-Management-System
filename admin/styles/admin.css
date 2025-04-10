@@ -1,0 +1,823 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+/* https://www.youtube.com/watch?v=wEfaoAa99XY&t=1102s */
+#sidenav {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  background-color: #11101d;
+  width: 13em;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  color: white;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  margin: 20px 0 20px 3px;
+}
+
+#sidenav .logo {
+  width: 50px;
+  height: auto;
+}
+
+#sidenav .logo-name {
+  margin: 0px 10px;
+  font-weight: 30px;
+  font-size: 20px;
+}
+
+#sidenav ul li {
+  list-style-type: none;
+  padding: 2px 5px;
+}
+
+#sidenav a {
+  display: flex;
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  padding: 15px 10px;
+  transition: all 0.5s ease;
+}
+
+#sidenav a:hover {
+  background-color: white;
+  color: black;
+  border-radius: 10px;
+}
+
+#sidenav a i {
+  min-width: 30px;
+  font-size: 20px;
+}
+
+#sidenav #log-out {
+  width: 13em;
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  align-items: center;
+  background-color: #191136;
+  justify-content: space-around;
+}
+
+#log-out h1 {
+  font-size: 20px;
+  padding: 0px 30px;
+}
+
+#log-out i {
+  width: 20px;
+  text-align: center;
+}
+
+#main {
+  position: absolute;
+  min-height: 100%;
+  width: calc(100% - 13em);
+  left: 13em;
+  background-color: #e6e2e2;
+}
+
+#main .title {
+  font-size: 25px;
+  padding: 20px 0px 0px 20px;
+  font-weight: normal;
+  color: #343131;
+}
+
+#main hr {
+  height: 5px;
+  width: 100%;
+  background-color: #343131;
+}
+
+#dashboard .flex-container {
+  margin: 40px 3% 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#dashboard .flex-item {
+  width: 320px;
+  height: 150px;
+  margin: 10px 20px 30px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 8px;
+  background-color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+#dashboard .flex-item h2 {
+  font-size: 20px;
+  font-weight: normal;
+  padding: 20px 10px;
+}
+
+#dashboard .flex-item p {
+  font-size: 45px;
+}
+
+/* DATA TABLE */
+
+.content-container {
+  width: 90%;
+  height: 520px;
+  border-radius: 20px;
+  background-color: white;
+  margin: 40px auto 0;
+  box-shadow: 2px 2px 5px;
+}
+
+.content-container .search-container {
+  float: left;
+  margin: 50px 3% 10px;
+}
+
+#search-field {
+  border: 1px solid black;
+  height: 27px;
+  padding-left: 5px;
+}
+
+
+#search-button,
+#generate-button,
+#export-button {
+  font-size: 14px;
+  background-color:#2596be;
+  height: 30px;
+  border-radius: 5px;
+}
+
+
+
+.content-container #add-button,
+.content-container #edit-button,
+.content-container #delete-button {
+  float: right;
+  padding: 10px 2%;
+  margin: 40px 3% 20px;
+  border-radius: 50px;
+  background-color: #20ff00;
+  font-weight: bold;
+}
+
+#clubs #add-button {
+  position: absolute;
+  right: 0;
+  padding: 12px 3%;
+  margin: -80px 3% 0;
+  border-radius: 50px;
+  background-color: #20ff00;
+  font-weight: bold;
+}
+
+#clubs #add-button:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+#specific-club-member-list .content-container #add-button {
+  margin-top: 10px;
+}
+
+#specific-club-member-list .search-container {
+  margin-top: 25px;
+}
+
+.content-container #edit-button,
+.content-container #delete-button {
+  margin: 21px 3% 13px;
+  display: block;
+}
+
+#specific-club #edit-button {
+  margin-right: 0;
+}
+
+.content-container #delete-button {
+  background-color: red;
+}
+
+.table-container {
+  overflow-y: auto;
+  margin: 10px 2%;
+  width: 95%;
+  max-height: 365px;
+  border: 1px solid black;
+}
+
+table {
+  width: 100%;
+  text-align: left;
+  border-spacing: 0;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+}
+
+table th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: white;
+}
+
+table th,
+table td {
+  line-height: 50px;
+}
+
+#events table td {
+  line-height: 70px;
+}
+
+#club-creation-requests table th,
+#club-creation-requests table td {
+  vertical-align: middle;
+}
+
+#club-creation-requests table th {
+  line-height: 150%;
+}
+
+#club-creation-requests table td {
+  line-height: 35px;
+}
+
+table td i {
+  font-size: 25px;
+  padding: 0 2%;
+  vertical-align: middle;
+}
+
+table .padding-left {
+  padding-left: 0.5%;
+}
+
+.table-container .fa-eye {
+  color: #00cf08;
+}
+
+.table-container .fa-edit {
+  color: #ffb800;
+}
+
+.table-container .fa-trash-alt {
+  color: red;
+}
+
+.table-container i:hover,
+.content-container button:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.no-record {
+  text-align: center;
+  font-size: 25px;
+  color: red;
+  line-height: 70px;
+}
+
+table img {
+  width: 80px;
+  vertical-align: middle;
+  padding: 2px 0;
+}
+
+/* SPECIFIC CLUB AND PROFILE PAGE */
+
+#specific-club .content-container,
+#profile .content-container {
+  height: 550px;
+  margin: 40px auto;
+}
+
+#specific-club .content-container {
+  padding-bottom: 20px;
+  height: auto;
+}
+
+#specific-club i {
+  margin: 0 5px;
+}
+
+.title-container {
+  width: 100%;
+  background-image: linear-gradient(#5c91a6, #155a75);
+  border-radius: 20px 20px 0 0;
+  display: inline-block;
+  padding-bottom: 4px;
+}
+
+.title-container h2 {
+  float: left;
+  color: white;
+  font-size: 21px;
+  margin: 25px 4% 20px;
+}
+
+#profile .fa-user-edit {
+  padding-right: 3px;
+}
+
+#specific-club .fa-trash-alt {
+  color: black;
+}
+
+#specific-club .flex-container,
+#profile .flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 10px 4% 0;
+  list-style-type: none;
+}
+
+#specific-club .flex-item,
+#profile .flex-item {
+  flex-basis: 45%;
+  padding-bottom: 45px;
+  position: relative;
+}
+
+#specific-club .activity-details {
+  flex-basis: 100%;
+}
+
+#specific-club h3,
+#profile h3 {
+  font-size: 20px;
+  padding-top: 5px;
+  font-weight: normal;
+}
+
+#specific-club-member-list {
+  margin-bottom: 50px;
+}
+
+#specific-club-member-list h2 {
+  font-size: 27px;
+  padding: 30px 30px 0px;
+}
+
+.fa-angle-double-up {
+  color:#00cf08;
+}
+
+.fa-angle-double-down {
+  color:red;
+}
+
+
+/* POP UP */
+
+/* Modal Box */
+
+.modal {
+  position: fixed; /* Stay in place */
+  z-index: 3; /* Sit on top */
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 200ms ease-in-out;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+}
+
+.modal.active {
+  transform: translate(-50%, -50%) scale(1);
+  overflow: auto; /* Enable scroll if needed */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  border: 1px solid #888;
+  border-radius: 10px;
+  margin: 5.5% 7% 1.5% 21%;
+  padding: 10px;
+  width: 70%;
+  min-width: 640px;  
+}
+
+.modal-content h1 {
+  padding: 25px 4% 15px;
+  width: fit-content;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.modal-content .flex-container,
+.report-container .flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 10px 4%;
+  list-style-type: none;
+}
+
+.modal-content .flex-item{
+  flex-basis: 45%;
+  padding-bottom: 30px;
+  position: relative;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#add-club-member.modal-content {
+  margin: 10% 20% 1.5% 38%;
+  width: 30%;
+  min-width: 350px;
+  padding: 20px 20px 30px;
+}
+
+#add-club-member.modal-content .flex-item{
+  flex-basis: 100%;
+}
+
+.modal-content .subtitle {
+  flex-basis: 100%;
+}
+
+.modal-content h3 {
+  font-size: 20px;
+  padding-top: 5px;
+  font-weight: normal;
+}
+
+.flex-item input,
+.flex-item select,
+.flex-item textarea {
+  border: 2px solid #262525;
+  border-radius: 5px;
+  width: 100%;
+  padding: 5px 0 5px 5px;
+  margin-top: 3px;
+  display: block;
+}
+
+.flex-item textarea {
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 5px;
+}
+
+.modal-content .flex-item input[type="date"] {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.flex-item input:disabled,
+.flex-item select:disabled,
+.flex-item textarea:disabled {
+  background-color: #e8e8e8;
+}
+
+.flex-item.success input,
+.flex-item.success select,
+.flex-item.success textarea {
+  border-color: #2ecc71;
+}
+
+.flex-item.error input,
+.flex-item.error select,
+.flex-item.error textarea {
+  border-color: #e74c3c;
+}
+
+.flex-item i {
+  font-size: 18px;
+  position: absolute;
+  top: 30px;
+  right: 3px;
+  visibility: hidden;
+}
+
+#profile .flex-item i {
+  top: 33px;
+}
+
+.modal-content .flex-item select ~ i {
+  right: 21px;
+}
+
+.modal-content .flex-item input[type="date"] ~ i {
+  right: 20px;
+}
+
+.flex-item.success i.fa-check-circle {
+  color: #2ecc71;
+  visibility: visible;
+}
+
+.flex-item.error i.fa-exclamation-circle {
+  color: #e74c3c;
+  visibility: visible;
+}
+
+.flex-item small {
+  position: absolute;
+  left: 0;
+  visibility: hidden;
+}
+
+.flex-item.error small {
+  color: #e74c3c;
+  visibility: visible;
+}
+
+.flex-item.email-exist-validation small, 
+.flex-item.tp-exist-validation small {
+  color: #e74c3c;
+  visibility: visible;
+}
+
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  padding: 0 15px;
+  border-radius: 10px;
+  background: none;
+}
+
+.close:hover,
+.close:focus {
+  color: white;
+  background-color: red;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Modal Overlay */
+
+#overlay {
+  position: fixed;
+  z-index: 2;
+  opacity: 0;
+  transition: 200ms ease-in-out;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+}
+
+#overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* Add and Edit Student */
+
+#edit-student,
+#add-student {
+  margin: 2.5% 20% 1.5% 20%; /* 5% from the top and centered */
+}
+
+.submit-container {
+  text-align: center;
+}
+
+.submit-container #update-button {
+  margin: auto;
+  display: none;
+}
+
+.submit-btn {
+  color: white;
+  width: 20%;
+  min-width: 87px;
+  height: 40px;
+  border-radius: 30px;
+  font-weight: bold;
+}
+
+#add-club-member .submit-btn {
+  width: 30%;
+}
+
+#approve-btn, #reject-btn {
+  margin: 0 30px;
+}
+
+#approve-btn {
+  background-color: #20ff00;
+  color:black;
+}
+
+#reject-btn {
+  background-color: red;
+}
+
+.submit-btn:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.bg-color-light-green {
+  background-color: #00c949;
+}
+
+.bg-color-eastern-blue {
+  background-color: #2596be;
+}
+
+#specific-club img,
+#view-club img, 
+#view-event img, 
+#view-club-creation-request img {
+  width: 150px;
+  margin: auto;
+  display: block;
+  border: 1px solid black;
+}
+/* Event Page */
+
+#view-event #view-form .submit-container {
+  padding-bottom: 20px;
+}
+
+/* Add and Edit Club/Event */
+
+#add-club, #edit-club, 
+#add-event, #edit-event, 
+#view-club-creation-request {
+  padding-bottom: 40px;
+}
+
+/* Student Form */
+#add-student, #view-student, #edit-student {
+  padding-bottom: 40px;
+  margin-top: 10%;
+  margin-right: 0;
+} 
+
+/* Club Creation Request */
+#club-creation-requests .content-container {
+  padding-top: 10px;
+}
+
+#club-creation-requests .table-container {
+  margin-top: 60px;
+  max-height: 360px;
+}
+
+/* Clubs Page */
+#clubs .grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 40px 10px;
+  justify-content: space-between;
+  margin: 110px 80px;
+}
+
+#clubs .grid-item {
+  height: auto;
+  width: 200px;
+  text-align: center;
+}
+
+#clubs .img-container {
+  height: 250px;
+  position: relative;
+  background: white;
+  border: 1px solid black;
+}
+
+#clubs .grid-item img {
+  position: absolute;
+  width: auto;
+  height: auto;
+  max-height: 100%;
+  max-width: 100%;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+#clubs .grid-item h2 {
+  margin: 15px 0px 10px 0px;
+  font-size: 18px;
+}
+
+#clubs .grid-container a:visited,
+#clubs .grid-container a:link {
+  color: black;
+  text-decoration: none;
+}
+
+/* Edit Specific Club */
+
+img#club-image {  
+  margin: 20px auto;
+}
+
+.flex-item#edit-club-image {
+  display: none;
+}
+
+
+/* Reports */
+#reports .content-container {
+  min-height: 550px;
+  height: auto;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+
+#reports .report-container {
+  width: 65%;
+  margin: 15px 0 10px;
+  padding-top: 20px;
+}
+
+#reports .flex-item select#report-category {
+  width: 260px;
+}
+
+#reports .flex-item select#report-list {
+  width: 270px;
+}
+
+#reports .flex-item input {
+  padding: 0;
+  border: 0;
+}
+
+#generate-button {
+  background-color:#00c949;
+}
+
+#reports .flex-item i {
+  top: 12px;
+  right: 20px;
+}
+
+.report-container .flex-item {
+  position: relative;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-bottom: 10px;
+}
+
+#export-container{
+  float: right;
+  position: relative;
+  right: 317px;
+  bottom: 53px;
+  visibility: hidden;
+}
+
+#subject-container {
+  padding: 5px 0 24px;
+  margin: auto;
+  text-align: center;
+  width: fit-content;
+}
+
+#subject-container h1 {
+  font-size: 25px;
+  padding-bottom: 6px;
+}
+
+#subject-container h2 {
+  font-size: 21px;
+}
+
+#piechart, #piechart-png{
+  position: absolute;
+}
+
+#piechart-png {
+  visibility: hidden;
+}
+
+#chart-container {
+  position: relative;
+  width: 900px;
+  height: 500px;
+  margin: 30px auto;
+}
